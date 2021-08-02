@@ -36,3 +36,12 @@ func TestTruncFloat(t *testing.T) {
 	assert.InDelta(123, TruncFloat(123.1, -1), 1e-1)
 	assert.InDelta(123, TruncFloat(123.9, -1), 1e-1)
 }
+
+func TestRoundFloat(t *testing.T) {
+	assert := assert.New(t)
+
+	assert.InDelta(123.4, RoundFloat(123.44, 1), 1e-2)
+	assert.InDelta(123.5, RoundFloat(123.45, 1), 1e-2)
+	assert.InDelta(123, RoundFloat(123.4, 0), 1e-1)
+	assert.InDelta(123, RoundFloat(123.4, -1), 1e-1)
+}

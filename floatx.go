@@ -24,3 +24,12 @@ func TruncFloat(x float64, decimal int) float64 {
 	}
 	return math.Trunc(x*d) / d
 }
+
+// RoundFloat returns the nearest value of x with decimal decimal digit.
+func RoundFloat(x float64, decimal int) float64 {
+	d := float64(1)
+	if decimal > 0 {
+		d = math.Pow10(decimal)
+	}
+	return math.Round(x*d) / d
+}
