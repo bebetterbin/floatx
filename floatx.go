@@ -15,3 +15,12 @@ func CeilFloat(x float64, decimal int) float64 {
 	}
 	return math.Ceil(x*d) / d
 }
+
+// TruncFloat returns the least value lesser than or equal to x, keep decimal decimal digit.
+func TruncFloat(x float64, decimal int) float64 {
+	d := float64(1)
+	if decimal > 0 {
+		d = math.Pow10(decimal)
+	}
+	return math.Trunc(x*d) / d
+}

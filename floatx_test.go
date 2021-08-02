@@ -25,3 +25,14 @@ func TestCeilFloat(t *testing.T) {
 	assert.InDelta(124, CeilFloat(123.1, -1), 1e-1)
 	assert.InDelta(124, CeilFloat(123.9, -1), 1e-1)
 }
+
+func TestTruncFloat(t *testing.T) {
+	assert := assert.New(t)
+
+	assert.InDelta(123.4, TruncFloat(123.41, 1), 1e-2)
+	assert.InDelta(123.4, TruncFloat(123.49, 1), 1e-2)
+	assert.InDelta(123, TruncFloat(123.1, 0), 1e-1)
+	assert.InDelta(123, TruncFloat(123.9, 0), 1e-1)
+	assert.InDelta(123, TruncFloat(123.1, -1), 1e-1)
+	assert.InDelta(123, TruncFloat(123.9, -1), 1e-1)
+}
